@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
+import java.net.NetworkInterface;
 
 public class UDPMulicastTest {
-	final private static int port = 1337;
+	final private static int port = 1900;
 	final private static String address = "239.255.255.250"; 
 	private static InetAddress mcastGroup = null;
 	private static MulticastSocket mcastSocket = null;
@@ -21,14 +22,17 @@ public class UDPMulicastTest {
 	public static void receiver() throws IOException {
 		byte[] buf = new byte[1000];
 		mcastSocket.joinGroup(mcastGroup);
-	 	DatagramPacket recv = new DatagramPacket(buf, buf.length);
-	 	System.out.println("Listening on "+mcastSocket.getLocalSocketAddress());
-	 	mcastSocket.receive(recv);
-		mcastSocket.leaveGroup(mcastGroup);
-	 	System.out.println("I got: "+ new String(recv.getData()));
+		while(true){
+		 	DatagramPacket recv = new DatagramPacket(buf, buf.length);
+		 	System.out.println("Listening on "+mcastSocket.getLocalSocketAddress());
+	 		mcastSocket.receive(recv);
+			System.out.println("I got message from " + recv.getAddress() + " :\n"+ new String(recv.getData()));
+		}
+//		mcastSocket.leaveGroup(mcastGroup);
 	 }
 	
 	public static void main(String[] args) throws IOException{
+		System.out.println(NetworkInterface.getByName("eth0"));
 		mcastGroup = InetAddress.getByName(address);
 		mcastSocket = new MulticastSocket(port);
 		mcastSocket.setLoopbackMode(false);
