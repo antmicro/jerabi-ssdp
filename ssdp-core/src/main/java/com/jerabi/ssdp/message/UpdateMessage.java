@@ -23,7 +23,7 @@ import com.jerabi.ssdp.util.SSDPContants;
  *   
  *   @see AbstractSSDPNotifyMessage
  */
-public class UpdateMessage extends AbstractSSDPNotifyMessage {
+public class UpdateMessage extends AbstractSSDPNotifyMessage implements DeviceDescriptionMessage {
 	
 	/**
 	 * First line of the message

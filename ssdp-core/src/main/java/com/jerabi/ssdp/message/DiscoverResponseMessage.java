@@ -26,7 +26,7 @@ import com.jerabi.ssdp.util.SSDPContants;
  * 
  * @see DiscoverMessage
  */
-public class DiscoverResponseMessage implements ISSDPMessage {
+public class DiscoverResponseMessage implements ISSDPMessage, DeviceDescriptionMessage {
 	
 	/**
 	 * First line of the message
