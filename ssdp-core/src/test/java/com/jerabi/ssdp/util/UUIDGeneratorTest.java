@@ -1,9 +1,11 @@
 package com.jerabi.ssdp.util;
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
+import static org.junit.Assert.assertFalse;
+import org.junit.Assume;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -18,9 +20,13 @@ import org.junit.Test;
 import com.jerabi.ssdp.util.UUIDGenerator;
 
 public class UUIDGeneratorTest {
+	private static NetworkInterface iface = null;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		iface = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+		byte[] mac = iface.getHardwareAddress();
+		Assume.assumeFalse("Could not obtain mac address for testing.", mac == null);
 	}
 
 	@Before
@@ -43,8 +49,7 @@ public class UUIDGeneratorTest {
 			}
 			map.put(uuid, uuid);
 		}
-		
-		
+
 	}
 	
 	@Test
@@ -53,17 +58,17 @@ public class UUIDGeneratorTest {
 		String initialUUID = null;
 		
 		try {
-			initialUUID = UUIDGenerator.getUUID(NetworkInterface.getByInetAddress(InetAddress.getLocalHost()));
+			initialUUID = UUIDGenerator.getUUID(iface);
 		} catch (Exception e) {
-			fail("Should not throws Exception");
+			fail("Got getUUID exception: "+e.getMessage());
 		}
 		
 		for(int i=0;i<100;i++){
 			String uuid = null;
 			try {
-				uuid = UUIDGenerator.getUUID(NetworkInterface.getByInetAddress(InetAddress.getLocalHost()));
+				uuid = UUIDGenerator.getUUID(iface);
 			} catch (Exception e) {
-				fail("Should not throws Exception");
+				fail("Got getUUID exception: "+e.getMessage());
 			}
 			
 			assertNotNull(uuid);
