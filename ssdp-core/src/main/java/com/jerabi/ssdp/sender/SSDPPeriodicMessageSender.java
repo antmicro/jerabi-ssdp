@@ -236,7 +236,7 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 		}
 		
 		// TODO devrait avoir une boucle pour lire les messages
-		// entrant.. testcase : 3 serveurs qui écouteraient et répondrait en meme temps
+		// entrant.. testcase : 3 serveurs qui ecouteraient et repondrait en meme temps
 		// mettre un runnable car on se fou du resultat ici
 		
 		final String msg = message;
