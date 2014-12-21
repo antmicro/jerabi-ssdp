@@ -17,7 +17,7 @@ import org.junit.Test;
 
 import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.sender.SSDPDefaultPeriodicMessageSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 import com.jerabi.ssdp.util.State;
 
 public class SSDPPeriodicMessageSenderTest {
@@ -27,7 +27,7 @@ public class SSDPPeriodicMessageSenderTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		sender = new SSDPDefaultPeriodicMessageSender(null, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY) {
+		sender = new SSDPDefaultPeriodicMessageSender(null, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY) {
 			@Override
 			public List<ISSDPMessage> getSSDPMessagesToSend() {
 				List<ISSDPMessage> list = new ArrayList<ISSDPMessage>();
@@ -80,7 +80,7 @@ public class SSDPPeriodicMessageSenderTest {
 
 	@Test
 	public void testGetSSDPHost() {
-		assertEquals(SSDPContants.DEFAULT_IP, sender.getSSDPHost());
+		assertEquals(SSDPConstants.DEFAULT_IP, sender.getSSDPHost());
 	}
 
 	@Test
@@ -91,7 +91,7 @@ public class SSDPPeriodicMessageSenderTest {
 
 	@Test
 	public void testGetSSDPPort() {
-		assertEquals(SSDPContants.DEFAULT_PORT, sender.getSSDPPort());
+		assertEquals(SSDPConstants.DEFAULT_PORT, sender.getSSDPPort());
 	}
 
 	@Test
@@ -112,7 +112,7 @@ public class SSDPPeriodicMessageSenderTest {
 	
 	@Test
 	public void testSendMessageInvalidHost() {
-		SSDPDefaultPeriodicMessageSender sender2 = new SSDPDefaultPeriodicMessageSender(null, "-1", -1, SSDPContants.DEFAULT_DELAY) {
+		SSDPDefaultPeriodicMessageSender sender2 = new SSDPDefaultPeriodicMessageSender(null, "-1", -1, SSDPConstants.DEFAULT_DELAY) {
 			@Override
 			public List<ISSDPMessage> getSSDPMessagesToSend() {
 				List<ISSDPMessage> list = new ArrayList<ISSDPMessage>();

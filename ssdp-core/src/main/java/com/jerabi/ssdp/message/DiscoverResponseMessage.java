@@ -2,7 +2,7 @@ package com.jerabi.ssdp.message;
 
 import java.util.List;
 
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 
 
@@ -232,14 +232,14 @@ public class DiscoverResponseMessage implements ISSDPMessage, DeviceDescriptionM
 		// the message is different based on the type
 		
 		sb.append(getNotify()).append("\r\n");
-		sb.append(SSDPContants.CACHECONTROL + " " +  getCacheControl()).append("\r\n");
-		sb.append(SSDPContants.DATE + " " +  getDate()).append("\r\n");
-		sb.append(SSDPContants.LOCATION + " " +  getLocation()).append("\r\n");
-		sb.append(SSDPContants.SERVER + " " +  getServer()).append("\r\n");
-		sb.append(SSDPContants.ST + " " +  getSt()).append("\r\n");
-		sb.append(SSDPContants.EXT + " " +  getExt()).append("\r\n");
-		sb.append(SSDPContants.USN + " " +  getUsn()).append("\r\n");
-		sb.append(SSDPContants.CONTENTLENGTH + " " +  getContentLength()).append("\r\n");
+		sb.append(SSDPConstants.CACHECONTROL + " " +  getCacheControl()).append("\r\n");
+		sb.append(SSDPConstants.DATE + " " +  getDate()).append("\r\n");
+		sb.append(SSDPConstants.LOCATION + " " +  getLocation()).append("\r\n");
+		sb.append(SSDPConstants.SERVER + " " +  getServer()).append("\r\n");
+		sb.append(SSDPConstants.ST + " " +  getSt()).append("\r\n");
+		sb.append(SSDPConstants.EXT + " " +  getExt()).append("\r\n");
+		sb.append(SSDPConstants.USN + " " +  getUsn()).append("\r\n");
+		sb.append(SSDPConstants.CONTENTLENGTH + " " +  getContentLength()).append("\r\n");
 		sb.append("\r\n");
 		
 		return sb.toString();

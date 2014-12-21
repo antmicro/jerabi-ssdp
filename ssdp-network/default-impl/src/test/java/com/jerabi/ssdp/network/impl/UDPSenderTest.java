@@ -21,14 +21,14 @@ import com.jerabi.ssdp.handler.ISSDPResponseHandler;
 import com.jerabi.ssdp.handler.SSDPDefaultResponseHandler;
 import com.jerabi.ssdp.network.impl.MulticastListener;
 import com.jerabi.ssdp.network.impl.UDPSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class UDPSenderTest {
 
 	private static UDPSender sender = null;
 	private static UDPSender sender2 = null;
 	
-	private static final String HOST = SSDPContants.DEFAULT_IP;
+	private static final String HOST = SSDPConstants.DEFAULT_IP;
 	private static final int PORT = 5009;
 	private static InetAddress group = null;
 	

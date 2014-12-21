@@ -19,7 +19,7 @@ import com.jerabi.ssdp.listener.SSDPMulticastListener;
 import com.jerabi.ssdp.network.IMulticastListener;
 import com.jerabi.ssdp.network.SSDPNetworkFactory;
 import com.jerabi.ssdp.network.impl.SSDPNetworkImpl;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 import com.jerabi.ssdp.util.State;
 
 public class SSDPMulticastListenerTest {
@@ -34,7 +34,7 @@ public class SSDPMulticastListenerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		listener = new SSDPMulticastListener(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY);
+		listener = new SSDPMulticastListener(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY);
 		t = new Thread(listener);
 	}
 
@@ -68,9 +68,9 @@ public class SSDPMulticastListenerTest {
 		listener.setSSDPResponseHandler(null);
 		
 		assertNull(listener.getSSDPResponseHandler());
-		assertEquals(SSDPContants.DEFAULT_IP, listener.getHost());
-		assertEquals(SSDPContants.DEFAULT_PORT, listener.getPort());
-		assertEquals(SSDPContants.DEFAULT_DELAY, listener.getTimeout());
+		assertEquals(SSDPConstants.DEFAULT_IP, listener.getHost());
+		assertEquals(SSDPConstants.DEFAULT_PORT, listener.getPort());
+		assertEquals(SSDPConstants.DEFAULT_DELAY, listener.getTimeout());
 		
 		listener.setHost("127.0.0.1");
 		listener.setPort(12);
@@ -130,9 +130,9 @@ public class SSDPMulticastListenerTest {
 		listener.setSSDPResponseHandler(null);
 		
 		assertNull(listener.getSSDPResponseHandler());
-		assertEquals(SSDPContants.DEFAULT_IP, listener.getHost());
-		assertEquals(SSDPContants.DEFAULT_PORT, listener.getPort());
-		assertEquals(SSDPContants.DEFAULT_DELAY, listener.getTimeout());
+		assertEquals(SSDPConstants.DEFAULT_IP, listener.getHost());
+		assertEquals(SSDPConstants.DEFAULT_PORT, listener.getPort());
+		assertEquals(SSDPConstants.DEFAULT_DELAY, listener.getTimeout());
 		
 		
 
@@ -302,7 +302,7 @@ public class SSDPMulticastListenerTest {
 
 		final CountDownLatch countDown = new CountDownLatch(2);
 		
-		SSDPMulticastListener listener2 = new SSDPMulticastListener(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY);
+		SSDPMulticastListener listener2 = new SSDPMulticastListener(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY);
 		listener2.setSSDPResponseHandler(null);
 		listener2.setBlocking(false);
 		listener2.setTimeout(10);
@@ -337,13 +337,13 @@ public class SSDPMulticastListenerTest {
 		while (NetworkInterface.getNetworkInterfaces().hasMoreElements()) {
 	        NetworkInterface ni = (NetworkInterface) NetworkInterface.getNetworkInterfaces().nextElement();
 	        
-	        SSDPMulticastListener listenerTmp = new SSDPMulticastListener(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY);
+	        SSDPMulticastListener listenerTmp = new SSDPMulticastListener(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY);
 	        
         }
 		
 		final CountDownLatch countDown = new CountDownLatch(2);
 		
-		SSDPMulticastListener listener2 = new SSDPMulticastListener(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY);
+		SSDPMulticastListener listener2 = new SSDPMulticastListener(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY);
 		listener2.setSSDPResponseHandler(null);
 		listener2.setBlocking(false);
 		listener2.setTimeout(10);

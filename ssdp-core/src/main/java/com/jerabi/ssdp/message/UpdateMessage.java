@@ -1,6 +1,6 @@
 package com.jerabi.ssdp.message;
 
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * 
@@ -33,7 +33,7 @@ public class UpdateMessage extends AbstractSSDPNotifyMessage implements DeviceDe
 	/**
 	 * NTS value
 	 */
-	public static final String nts = SSDPContants.NTS_UPDATE;
+	public static final String nts = SSDPConstants.NTS_UPDATE;
 	
 	protected String cacheControl;
 	protected String location;
@@ -107,13 +107,13 @@ public class UpdateMessage extends AbstractSSDPNotifyMessage implements DeviceDe
 		StringBuffer sb = new StringBuffer();
 	
 		sb.append(getNotify()).append("\r\n");
-		sb.append(SSDPContants.HOST + " " +  getHost()).append("\r\n");
-		sb.append(SSDPContants.NT + " " +  getNt()).append("\r\n");
-		sb.append(SSDPContants.NTS + " " +  getNts()).append("\r\n");
-		sb.append(SSDPContants.LOCATION + " " +  getLocation()).append("\r\n");
-		sb.append(SSDPContants.USN + " " +  getUsn()).append("\r\n");
-		sb.append(SSDPContants.CACHECONTROL + " " +  getCacheControl()).append("\r\n");
-		sb.append(SSDPContants.SERVER + " " +  getServer()).append("\r\n");
+		sb.append(SSDPConstants.HOST + " " +  getHost()).append("\r\n");
+		sb.append(SSDPConstants.NT + " " +  getNt()).append("\r\n");
+		sb.append(SSDPConstants.NTS + " " +  getNts()).append("\r\n");
+		sb.append(SSDPConstants.LOCATION + " " +  getLocation()).append("\r\n");
+		sb.append(SSDPConstants.USN + " " +  getUsn()).append("\r\n");
+		sb.append(SSDPConstants.CACHECONTROL + " " +  getCacheControl()).append("\r\n");
+		sb.append(SSDPConstants.SERVER + " " +  getServer()).append("\r\n");
 		sb.append("\r\n");
 		
 		return sb.toString();

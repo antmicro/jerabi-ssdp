@@ -14,7 +14,7 @@ import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.message.USNInfo;
 import com.jerabi.ssdp.message.helper.SSDPMessageHelper;
 import com.jerabi.ssdp.sender.SSDPPeriodicMessageSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class SSDPServer {
 
@@ -46,7 +46,7 @@ public class SSDPServer {
 		controler.getDiscoverSender().setSSDPResponseHandler(new SSDPDiscoverResponseHandler(controler));
 		
 		
-		controler.setPeriodicMessageSender(new SSDPPeriodicMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT) {
+		controler.setPeriodicMessageSender(new SSDPPeriodicMessageSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT) {
 			
 			@Override
 			public List<ISSDPMessage> getSSDPMessagesToSend() {
@@ -69,10 +69,10 @@ public class SSDPServer {
 		controler.getPeriodicMessageSender().setDelay(30000);
 
 		// add device
-		controler.getServiceInfoList().add(new ServiceInfo(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, "upnp:rootdevice","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","upnp:rootdevice")));
-		controler.getServiceInfoList().add(new ServiceInfo(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, "urn:schemas-upnp-org:service:ConnectionManager:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:service:ConnectionManager:1")));
-		controler.getServiceInfoList().add(new ServiceInfo(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, "urn:schemas-upnp-org:service:ContentDirectory:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:service:ContentDirectory:1")));
-		controler.getServiceInfoList().add(new ServiceInfo(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, "urn:schemas-upnp-org:device:MediaServer:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:device:MediaServer:1")));
+		controler.getServiceInfoList().add(new ServiceInfo(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, "upnp:rootdevice","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","upnp:rootdevice")));
+		controler.getServiceInfoList().add(new ServiceInfo(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, "urn:schemas-upnp-org:service:ConnectionManager:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:service:ConnectionManager:1")));
+		controler.getServiceInfoList().add(new ServiceInfo(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, "urn:schemas-upnp-org:service:ContentDirectory:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:service:ContentDirectory:1")));
+		controler.getServiceInfoList().add(new ServiceInfo(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, "urn:schemas-upnp-org:device:MediaServer:1","http://142.225.35.55:5001/description/fetch", new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416","schemas-upnp-org:device:MediaServer:1")));
 
 		
 		

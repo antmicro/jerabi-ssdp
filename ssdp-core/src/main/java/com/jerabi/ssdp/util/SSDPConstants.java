@@ -7,7 +7,7 @@ package com.jerabi.ssdp.util;
  * @author Sebastien Dionne
  *
  */
-public class SSDPContants {
+public class SSDPConstants {
 	
 	/**
 	 * Method for sending notifications and events.  First line of the message.

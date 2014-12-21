@@ -18,7 +18,7 @@ import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.message.USNInfo;
 import com.jerabi.ssdp.message.helper.SSDPMessageHelper;
 import com.jerabi.ssdp.sender.SSDPPeriodicMessageSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class SSDPControlPoint {
 	private static final Logger s_logger = Logger.getLogger(SSDPServer.class.getName());

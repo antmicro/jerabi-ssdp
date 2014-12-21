@@ -13,7 +13,7 @@ import com.jerabi.ssdp.message.DiscoverMessage;
 import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.network.IUDPSender;
 import com.jerabi.ssdp.network.SSDPNetworkFactory;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * This class in a {@link SSDPPeriodicMessageSender} that send DiscoverMessage and handle responses for the messages sent. 
@@ -28,7 +28,7 @@ import com.jerabi.ssdp.util.SSDPContants;
  * <pre>
  * ...
  * // you need a ISSDPControler to process the responses.
- * SSDPDiscoverSender discoverSender = new SSDPDiscoverSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT);
+ * SSDPDiscoverSender discoverSender = new SSDPDiscoverSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT);
  * discoverSender.setSSDPResponseHandler(new SSDPDiscoverResponseHandler(controler));
  * Thread t = new Thread(discoverSender);
  * t.start();
@@ -44,7 +44,7 @@ public class SSDPDiscoverSender extends SSDPPeriodicMessageSender {
 	private int TTL = 3; 	// MX 
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * and creates a IUDPSender using ssdpPort
 	 * 
 	 * @param controler ISSDPControler
@@ -69,7 +69,7 @@ public class SSDPDiscoverSender extends SSDPPeriodicMessageSender {
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * and creates a IUDPSender using ssdpPort
 	 * 
 	 * @param controler ISSDPControler
@@ -130,7 +130,7 @@ public class SSDPDiscoverSender extends SSDPPeriodicMessageSender {
 	public List<ISSDPMessage> getSSDPMessagesToSend() {
 		
 		List<ISSDPMessage> list = new ArrayList<ISSDPMessage>();
-		DiscoverMessage discoverMessage = new DiscoverMessage(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, TTL, "upnp:rootdevice", null);
+		DiscoverMessage discoverMessage = new DiscoverMessage(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, TTL, "upnp:rootdevice", null);
 		
 		list.add(discoverMessage);
 		list.add(discoverMessage);

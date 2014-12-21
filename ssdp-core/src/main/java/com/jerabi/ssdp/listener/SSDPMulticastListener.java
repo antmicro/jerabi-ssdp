@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import com.jerabi.ssdp.handler.ISSDPResponseHandler;
 import com.jerabi.ssdp.network.IMulticastListener;
 import com.jerabi.ssdp.network.SSDPNetworkFactory;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 import com.jerabi.ssdp.util.State;
 import com.jerabi.ssdp.util.StateHolder;
 
@@ -22,7 +22,7 @@ import com.jerabi.ssdp.util.StateHolder;
  * @example.
  * <pre>
  * // You need pass a ISSDPHandler to handle the multicast messages received.
- * SSDPMulticastListener listener = new SSDPMulticastListener(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, true);
+ * SSDPMulticastListener listener = new SSDPMulticastListener(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, true);
  * listener.setSSDPHandler(new SSDPDefaultHandler(controler)); 
  * t = new Thread(listener);
  * t.start();
@@ -32,7 +32,7 @@ import com.jerabi.ssdp.util.StateHolder;
  // You need pass a ISSDPHandler to handle the multicast messages received.
  * List<NetworkInterface> networkInterfaceList = new ArrayList<NetworkInterface>();
  * networkInterfaceList.add(NetworkInterface.getByName("eth0"));
- * SSDPMulticastListener listener = new SSDPMulticastListener(new InetSocketAddress(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT), networkInterfaceList);
+ * SSDPMulticastListener listener = new SSDPMulticastListener(new InetSocketAddress(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT), networkInterfaceList);
  * listener.setSSDPHandler(new SSDPDefaultHandler(controler)); 
  * t = new Thread(listener);
  * t.start();  
@@ -44,7 +44,7 @@ public class SSDPMulticastListener implements Runnable {
 	
 	protected StateHolder<State> stateHolder = new StateHolder<State>();
 	
-	protected int timeout = SSDPContants.DEFAULT_SOCKET_TIMEOUT;
+	protected int timeout = SSDPConstants.DEFAULT_SOCKET_TIMEOUT;
 	protected String host = null;
 	protected int port;
 	protected InetSocketAddress socketAddress = null;
@@ -58,7 +58,7 @@ public class SSDPMulticastListener implements Runnable {
 	 * @param port Multicast Port
 	 */
 	public SSDPMulticastListener(String host, int port) {
-		this(host, port, SSDPContants.DEFAULT_SOCKET_TIMEOUT, true);
+		this(host, port, SSDPConstants.DEFAULT_SOCKET_TIMEOUT, true);
 	}
 	
 	/**
@@ -94,7 +94,7 @@ public class SSDPMulticastListener implements Runnable {
 	 * @param networkInterfaceList NetworkInterfaces that will be used to listen
 	 */
 	public SSDPMulticastListener(String host, int port, List<NetworkInterface> networkInterfaceList) {
-		this(host, port, networkInterfaceList, SSDPContants.DEFAULT_SOCKET_TIMEOUT, true);
+		this(host, port, networkInterfaceList, SSDPConstants.DEFAULT_SOCKET_TIMEOUT, true);
 	}
 	
 	/**
@@ -134,7 +134,7 @@ public class SSDPMulticastListener implements Runnable {
 	 * @param networkInterfaceList NetworkInterfaces that will be used to listen
 	 */
 	public SSDPMulticastListener(InetSocketAddress socketAddress, List<NetworkInterface> networkInterfaceList) {
-		this(socketAddress, networkInterfaceList, SSDPContants.DEFAULT_SOCKET_TIMEOUT, true);
+		this(socketAddress, networkInterfaceList, SSDPConstants.DEFAULT_SOCKET_TIMEOUT, true);
 	}
 	
 	/**

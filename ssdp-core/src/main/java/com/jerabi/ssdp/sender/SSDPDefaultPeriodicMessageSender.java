@@ -25,7 +25,7 @@ import com.jerabi.ssdp.message.ISSDPMessage;
  * 
  *  // a simple example that will send 5 times the same message each time.
  * ...
- * sender = new SSDPDefaultPeriodicMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY) {
+ * sender = new SSDPDefaultPeriodicMessageSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY) {
  * 			&#64;Override
  * 			public List&lt;ISSDPMessage> getSSDPMessagesToSend() {
  * 				List&lt;ISSDPMessage> list = new ArrayList&lt;ISSDPMessage>();
@@ -50,7 +50,7 @@ import com.jerabi.ssdp.message.ISSDPMessage;
 public class SSDPDefaultPeriodicMessageSender extends SSDPPeriodicMessageSender {
 
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
@@ -71,7 +71,7 @@ public class SSDPDefaultPeriodicMessageSender extends SSDPPeriodicMessageSender 
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port

@@ -14,7 +14,7 @@ import com.jerabi.ssdp.message.DiscoverResponseMessage;
 import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.message.UpdateMessage;
 import com.jerabi.ssdp.message.helper.SSDPMessageHelper;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class SSDPMessageHelperTest {
 
@@ -332,7 +332,7 @@ public class SSDPMessageHelperTest {
 		assertNull(msg.getPort());
 		
 		// check if default port is returned
-		assertTrue(msg.toString().indexOf(SSDPContants.HOST + " " + msg.getHost() + ":" + SSDPContants.DEFAULT_PORT)>-1);
+		assertTrue(msg.toString().indexOf(SSDPConstants.HOST + " " + msg.getHost() + ":" + SSDPConstants.DEFAULT_PORT)>-1);
 		
 	}
 	

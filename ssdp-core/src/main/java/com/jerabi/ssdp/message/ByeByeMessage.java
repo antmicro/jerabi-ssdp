@@ -1,6 +1,6 @@
 package com.jerabi.ssdp.message;
 
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * 
@@ -35,7 +35,7 @@ public class ByeByeMessage extends AbstractSSDPNotifyMessage {
 	/**
 	 * NTS value
 	 */
-	public static final String nts = SSDPContants.NTS_BYEBYE;
+	public static final String nts = SSDPConstants.NTS_BYEBYE;
 	protected String contentLength;
 	
 	/**
@@ -70,11 +70,11 @@ public class ByeByeMessage extends AbstractSSDPNotifyMessage {
 		StringBuffer sb = new StringBuffer();
 		
 		sb.append(getNotify()).append("\r\n");
-		sb.append(SSDPContants.HOST + " " +  getHost()).append("\r\n");
-		sb.append(SSDPContants.NT + " " +  getNt()).append("\r\n");
-		sb.append(SSDPContants.NTS + " " +  getNts()).append("\r\n");
-		sb.append(SSDPContants.USN + " " +  getUsn()).append("\r\n");
-		sb.append(SSDPContants.CONTENTLENGTH + " " +  getContentLength()).append("\r\n");
+		sb.append(SSDPConstants.HOST + " " +  getHost()).append("\r\n");
+		sb.append(SSDPConstants.NT + " " +  getNt()).append("\r\n");
+		sb.append(SSDPConstants.NTS + " " +  getNts()).append("\r\n");
+		sb.append(SSDPConstants.USN + " " +  getUsn()).append("\r\n");
+		sb.append(SSDPConstants.CONTENTLENGTH + " " +  getContentLength()).append("\r\n");
 		
 		return sb.toString();
 	}

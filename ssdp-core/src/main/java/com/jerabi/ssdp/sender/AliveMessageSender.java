@@ -28,7 +28,7 @@ import com.jerabi.ssdp.message.helper.SSDPMessageHelper;
  * 
  *  // a simple example that will send 5 times the same message each time.
  * ...
- * sender = new AliveMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY, "max-age=1800", "Demo Server", 5);
+ * sender = new AliveMessageSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY, "max-age=1800", "Demo Server", 5);
  * 		
  * 	...
  * </pre>
@@ -42,7 +42,7 @@ public class AliveMessageSender extends SSDPDefaultPeriodicMessageSender {
 	protected int multipleTimeToSend = 1;
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
@@ -56,7 +56,7 @@ public class AliveMessageSender extends SSDPDefaultPeriodicMessageSender {
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
@@ -104,7 +104,7 @@ public class AliveMessageSender extends SSDPDefaultPeriodicMessageSender {
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
@@ -119,7 +119,7 @@ public class AliveMessageSender extends SSDPDefaultPeriodicMessageSender {
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port

@@ -16,7 +16,7 @@ import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.message.ServiceInfo;
 import com.jerabi.ssdp.message.USNInfo;
 import com.jerabi.ssdp.message.helper.SSDPMessageHelper;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class SSDPDiscoverResponseHandlerTest {
 
@@ -53,7 +53,7 @@ public class SSDPDiscoverResponseHandlerTest {
 			handler.handle(SSDPMessageHelper.createSSDPAliveMessage(deviceInfo).toString());
 			handler.handle(SSDPMessageHelper.createSSDPByeByeMessage(deviceInfo).toString());
 			handler.handle(SSDPMessageHelper.createSSDPUpdateMessage(deviceInfo).toString());
-			handler.handle(SSDPMessageHelper.createSSDPDiscoverMessage(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, 3, "upnp:rootdevice", null).toString());
+			handler.handle(SSDPMessageHelper.createSSDPDiscoverMessage(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, 3, "upnp:rootdevice", null).toString());
 			
 			StringBuffer sb = new StringBuffer();
 			
@@ -100,7 +100,7 @@ public class SSDPDiscoverResponseHandlerTest {
 			handler.handle(SSDPMessageHelper.createSSDPAliveMessage(deviceInfo).toString());
 			handler.handle(SSDPMessageHelper.createSSDPByeByeMessage(deviceInfo).toString());
 			handler.handle(SSDPMessageHelper.createSSDPUpdateMessage(deviceInfo).toString());
-			handler.handle(SSDPMessageHelper.createSSDPDiscoverMessage(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, 3, "upnp:rootdevice", null).toString());
+			handler.handle(SSDPMessageHelper.createSSDPDiscoverMessage(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, 3, "upnp:rootdevice", null).toString());
 			
 			StringBuffer sb = new StringBuffer();
 			

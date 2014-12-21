@@ -2,7 +2,7 @@ package com.jerabi.ssdp.message;
 
 import java.util.List;
 
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * Represents a "ssdp:discover" message (M-SEARCH).
@@ -35,7 +35,7 @@ public class DiscoverMessage implements ISSDPMessage {
 	/**
 	 * Field for discover message (M-SEARCH)
 	 */
-	public static final String man = SSDPContants.NTS_DISCOVER;
+	public static final String man = SSDPConstants.NTS_DISCOVER;
 	
 	protected String message;
 	protected String host = null;
@@ -176,14 +176,14 @@ public class DiscoverMessage implements ISSDPMessage {
 		if(getPort()!=null){
 			host = host + ":" + getPort();
 		} else {
-			host = host + ":" + SSDPContants.DEFAULT_PORT;
+			host = host + ":" + SSDPConstants.DEFAULT_PORT;
 		}
 		
 		sb.append(notify).append("\r\n");
-		sb.append(SSDPContants.HOST + " " +  host).append("\r\n");
-		sb.append(SSDPContants.MAN + " " + man).append("\r\n");
-		sb.append(SSDPContants.MX + " " + mx).append("\r\n");
-		sb.append(SSDPContants.ST + " " + st).append("\r\n");
+		sb.append(SSDPConstants.HOST + " " +  host).append("\r\n");
+		sb.append(SSDPConstants.MAN + " " + man).append("\r\n");
+		sb.append(SSDPConstants.MX + " " + mx).append("\r\n");
+		sb.append(SSDPConstants.ST + " " + st).append("\r\n");
 		
 		// custom attributes
 		if(attributes!=null && attributes.size()>0){

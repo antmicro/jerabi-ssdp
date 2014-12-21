@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import com.jerabi.ssdp.ISSDPControler;
 import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.network.SSDPNetworkFactory;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 import com.jerabi.ssdp.util.State;
 import com.jerabi.ssdp.util.StateHolder;
 
@@ -37,7 +37,7 @@ import com.jerabi.ssdp.util.StateHolder;
  * 
  *  // a simple example that will send 5 times the same message each time.
  * ...
- * sender = new SSDPDefaultPeriodicMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY) {
+ * sender = new SSDPDefaultPeriodicMessageSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY) {
  * 			@Override
  * 			public List<ISSDPMessage> getSSDPMessagesToSend() {
  * 				List<ISSDPMessage> list = new ArrayList<ISSDPMessage>();
@@ -65,7 +65,7 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 	
 	protected StateHolder<State> stateHolder = new StateHolder<State>();
 	
-	protected int delay = SSDPContants.DEFAULT_DELAY;
+	protected int delay = SSDPConstants.DEFAULT_DELAY;
 	protected String host = null;;
 	protected int port;
 	protected ISSDPControler controler = null;
@@ -78,13 +78,13 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 	protected ExecutorService threadPool;
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
 	 */
 	public SSDPPeriodicMessageSender(ISSDPControler controler, String ssdpHost, int ssdpPort){
-		this(controler, ssdpHost, ssdpPort, SSDPContants.DEFAULT_DELAY);
+		this(controler, ssdpHost, ssdpPort, SSDPConstants.DEFAULT_DELAY);
 	}
 	
 	/**
@@ -111,14 +111,14 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 	}
 	
 	/**
-	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPContants.DEFAULT_DELAY value
+	 * Constructor that will use the default delay see com.jerabi.ssdp.util.SSDPConstants.DEFAULT_DELAY value
 	 * @param controler ISSDPControler
 	 * @param ssdpHost multicast IP
 	 * @param ssdpPort multicast port
 	 * @param networkInterfaceList NetworkInterfaces that will be used
 	 */
 	public SSDPPeriodicMessageSender(ISSDPControler controler, String ssdpHost, int ssdpPort, List<NetworkInterface> networkInterfaceList){
-		this(controler, ssdpHost, ssdpPort, SSDPContants.DEFAULT_DELAY);
+		this(controler, ssdpHost, ssdpPort, SSDPConstants.DEFAULT_DELAY);
 	}
 	
 	/**

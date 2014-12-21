@@ -7,8 +7,8 @@ package com.jerabi.ssdp.message;
  * @author Sebastien Dionne
  * @example.
  * <pre>
- * new ServiceInfo(SSDPContants.DEFAULT_IP, 
- *                 SSDPContants.DEFAULT_PORT, 
+ * new ServiceInfo(SSDPConstants.DEFAULT_IP, 
+ *                 SSDPConstants.DEFAULT_PORT, 
  *                 "upnp:rootdevice",
  *                 "http://127.0.0.1:9000/config", 
  *                 new USNInfo("1acf6222-fc4b-33eb-bf49-e54643b4f416","upnp:rootdevice"));

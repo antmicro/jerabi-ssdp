@@ -23,7 +23,7 @@ import com.jerabi.ssdp.network.ISSDPNetwork;
 import com.jerabi.ssdp.network.IUDPSender;
 import com.jerabi.ssdp.network.SSDPNetworkFactory;
 import com.jerabi.ssdp.network.impl.SSDPNetworkImpl;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 import com.jerabi.ssdp.util.State;
 
 public class SSDPNetworkTest {
@@ -54,9 +54,9 @@ public class SSDPNetworkTest {
 		String message = "testSendMulticastMessageSocketAddress";
 		
 		try {
-			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT));
-			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT), null, 3);
-			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT), new ISSDPResponseHandler() {
+			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT));
+			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT), null, 3);
+			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT), new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -97,9 +97,9 @@ public class SSDPNetworkTest {
 		String message = "testSendMulticastMessageInetAddress";
 		
 		try {
-			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT);
-			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, null, 3);
-			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, new ISSDPResponseHandler() {
+			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT);
+			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, null, 3);
+			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -141,8 +141,8 @@ public class SSDPNetworkTest {
 			IUDPSender sender1 = instance.createUDPSender();
 			assertNotNull(sender1);
 			
-			sender1.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
-			sender1.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, null, 5);
+			sender1.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
+			sender1.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, null, 5);
 			
 		} catch(Exception e){
 			e.printStackTrace();
@@ -150,11 +150,11 @@ public class SSDPNetworkTest {
 		}
 		
 		try {
-			IUDPSender sender2 = instance.createUDPSender(SSDPContants.DEFAULT_PORT);
+			IUDPSender sender2 = instance.createUDPSender(SSDPConstants.DEFAULT_PORT);
 			assertNotNull(sender2);
 			
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, null, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, null, 5);
 
 			
 		} catch(Exception e){
@@ -182,9 +182,9 @@ public class SSDPNetworkTest {
 		
 		try {
 			
-			group = InetAddress.getByName(SSDPContants.DEFAULT_IP);
+			group = InetAddress.getByName(SSDPConstants.DEFAULT_IP);
 			
-			final IMulticastListener listener1 = instance.createMulticastListener(SSDPContants.DEFAULT_PORT, new ISSDPResponseHandler() {
+			final IMulticastListener listener1 = instance.createMulticastListener(SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -211,7 +211,7 @@ public class SSDPNetworkTest {
 			});
 			assertNotNull(listener1);
 			
-			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPContants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
+			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPConstants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -280,8 +280,8 @@ public class SSDPNetworkTest {
 			IUDPSender sender2 = instance.createUDPSender();
 			assertNotNull(sender2);
 			
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT+1, null, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT+1, null, 5);
 
 			
 		} catch(Exception e){
@@ -320,9 +320,9 @@ public class SSDPNetworkTest {
 		
 		try {
 			
-			group = InetAddress.getByName(SSDPContants.DEFAULT_IP);
+			group = InetAddress.getByName(SSDPConstants.DEFAULT_IP);
 			
-			final IMulticastListener listener1 = instance.createMulticastListener(SSDPContants.DEFAULT_PORT, new ISSDPResponseHandler() {
+			final IMulticastListener listener1 = instance.createMulticastListener(SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -349,7 +349,7 @@ public class SSDPNetworkTest {
 			});
 			assertNotNull(listener1);
 			
-			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPContants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
+			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPConstants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
 				
 				@Override
 				public void setSSDPControler(ISSDPControler controler) {
@@ -418,8 +418,8 @@ public class SSDPNetworkTest {
 			IUDPSender sender2 = instance.createUDPSender();
 			assertNotNull(sender2);
 			
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
-			sender2.sendMessage(msg, InetAddress.getByName(SSDPContants.DEFAULT_IP), SSDPContants.DEFAULT_PORT+1, null, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new SSDPDefaultResponseHandler(null) {}, 5);
+			sender2.sendMessage(msg, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT+1, null, 5);
 
 			
 		} catch(Exception e){

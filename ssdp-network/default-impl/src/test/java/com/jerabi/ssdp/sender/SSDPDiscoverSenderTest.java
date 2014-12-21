@@ -21,7 +21,7 @@ import com.jerabi.ssdp.network.impl.MulticastListener;
 import com.jerabi.ssdp.network.impl.UDPSender;
 import com.jerabi.ssdp.network.impl.UDPServer;
 import com.jerabi.ssdp.sender.SSDPDiscoverSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 public class SSDPDiscoverSenderTest {
 
@@ -31,8 +31,8 @@ public class SSDPDiscoverSenderTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-    	discoverSender = new SSDPDiscoverSender(null, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT);
-    	discoverSender2 = new SSDPDiscoverSender(null, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY);
+    	discoverSender = new SSDPDiscoverSender(null, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT);
+    	discoverSender2 = new SSDPDiscoverSender(null, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, SSDPConstants.DEFAULT_DELAY);
     	
     	threadPool = Executors.newFixedThreadPool(5);
 
@@ -71,7 +71,7 @@ public class SSDPDiscoverSenderTest {
 		boolean exception = false;
 		
 		try { 
-			SSDPDiscoverSender sender1 = new SSDPDiscoverSender(null, SSDPContants.DEFAULT_IP, -1);
+			SSDPDiscoverSender sender1 = new SSDPDiscoverSender(null, SSDPConstants.DEFAULT_IP, -1);
 			sender1.sendMessage("invalid port");
 		} catch(Exception e){
 			exception = true;
@@ -81,7 +81,7 @@ public class SSDPDiscoverSenderTest {
     	
 		exception = false;
 		try {
-			SSDPDiscoverSender sender1 = new SSDPDiscoverSender(null, SSDPContants.DEFAULT_IP, -1, SSDPContants.DEFAULT_DELAY);
+			SSDPDiscoverSender sender1 = new SSDPDiscoverSender(null, SSDPConstants.DEFAULT_IP, -1, SSDPConstants.DEFAULT_DELAY);
 			sender1.sendMessage("invalid port");
 		} catch(Exception e){
 			exception = true;
@@ -126,7 +126,7 @@ public class SSDPDiscoverSenderTest {
 		MulticastListener listener = null;
 		
 		try {
-			listener = new MulticastListener(SSDPContants.DEFAULT_PORT, new SSDPDiscoverResponseHandler(null) {
+			listener = new MulticastListener(SSDPConstants.DEFAULT_PORT, new SSDPDiscoverResponseHandler(null) {
 				
 				@Override
 				public void handle(String remoteAddr, int remotePort, String message)
@@ -136,7 +136,7 @@ public class SSDPDiscoverSenderTest {
 				}
 			});
 			
-			listener.joinGroup(InetAddress.getByName(SSDPContants.DEFAULT_IP));
+			listener.joinGroup(InetAddress.getByName(SSDPConstants.DEFAULT_IP));
 			
 		} catch(Exception e){
 			

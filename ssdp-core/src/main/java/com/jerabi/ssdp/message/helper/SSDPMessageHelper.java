@@ -12,7 +12,7 @@ import com.jerabi.ssdp.message.DiscoverResponseMessage;
 import com.jerabi.ssdp.message.ISSDPMessage;
 import com.jerabi.ssdp.message.ServiceInfo;
 import com.jerabi.ssdp.message.UpdateMessage;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * This helper provides API to create and parse {@link ISSDPMessage}.
@@ -91,24 +91,24 @@ public class SSDPMessageHelper {
 			
 			if(i==0){
 				notify = line.trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.CACHECONTROL)){
-				cacheControl = line.substring(SSDPContants.CACHECONTROL.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.DATE)){
-				date = line.substring(SSDPContants.DATE.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.LOCATION)){
-				location = line.substring(SSDPContants.LOCATION.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.SERVER)){
-				server = line.substring(SSDPContants.SERVER.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.ST)){
-				st = line.substring(SSDPContants.ST.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.EXT)){
-				ext = line.substring(SSDPContants.EXT.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.USN)){
-				usn = line.substring(SSDPContants.USN.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.CONTENTLENGTH)){
-				contentLength = line.substring(SSDPContants.CONTENTLENGTH.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.HOST)){
-				host = line.substring(SSDPContants.HOST.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.CACHECONTROL)){
+				cacheControl = line.substring(SSDPConstants.CACHECONTROL.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.DATE)){
+				date = line.substring(SSDPConstants.DATE.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.LOCATION)){
+				location = line.substring(SSDPConstants.LOCATION.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.SERVER)){
+				server = line.substring(SSDPConstants.SERVER.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.ST)){
+				st = line.substring(SSDPConstants.ST.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.EXT)){
+				ext = line.substring(SSDPConstants.EXT.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.USN)){
+				usn = line.substring(SSDPConstants.USN.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.CONTENTLENGTH)){
+				contentLength = line.substring(SSDPConstants.CONTENTLENGTH.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.HOST)){
+				host = line.substring(SSDPConstants.HOST.length()).trim();
 				
 				// extract port if found
 				int portIndex = host.indexOf(":");
@@ -117,17 +117,17 @@ public class SSDPMessageHelper {
 					host = host.substring(0,portIndex);
 				} else {
 					// use default port
-					port = Integer.toString(SSDPContants.DEFAULT_PORT);
+					port = Integer.toString(SSDPConstants.DEFAULT_PORT);
 				}
 				
-			} else if(line.toUpperCase().startsWith(SSDPContants.NT)){
-				nt = line.substring(SSDPContants.NT.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.NTS)){
-				nts = line.substring(SSDPContants.NTS.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.MX)){
-				mx = line.substring(SSDPContants.MX.length()).trim();
-			} else if(line.toUpperCase().startsWith(SSDPContants.MAN)){
-				man = line.substring(SSDPContants.MAN.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.NT)){
+				nt = line.substring(SSDPConstants.NT.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.NTS)){
+				nts = line.substring(SSDPConstants.NTS.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.MX)){
+				mx = line.substring(SSDPConstants.MX.length()).trim();
+			} else if(line.toUpperCase().startsWith(SSDPConstants.MAN)){
+				man = line.substring(SSDPConstants.MAN.length()).trim();
 			} else {
 				othersAttributes.add(line);
 			}
@@ -170,21 +170,21 @@ public class SSDPMessageHelper {
 			
 			AbstractSSDPNotifyMessage ssdpMessage = null;
 			
-			if(SSDPContants.NTS_ALIVE.equals(nts)){
+			if(SSDPConstants.NTS_ALIVE.equals(nts)){
 				ssdpMessage  = new AliveMessage();
 				
 				((AliveMessage)ssdpMessage ).setCacheControl(cacheControl);
 				((AliveMessage)ssdpMessage ).setLocation(location);
 				((AliveMessage)ssdpMessage ).setServer(server);
 				
-			} else if(SSDPContants.NTS_UPDATE.equals(nts)){
+			} else if(SSDPConstants.NTS_UPDATE.equals(nts)){
 				ssdpMessage = new UpdateMessage();
 				
 				((UpdateMessage)ssdpMessage ).setCacheControl(cacheControl);
 				((UpdateMessage)ssdpMessage ).setLocation(location);
 				((UpdateMessage)ssdpMessage ).setServer(server);
 
-			} else if(SSDPContants.NTS_BYEBYE.equals(nts)){
+			} else if(SSDPConstants.NTS_BYEBYE.equals(nts)){
 				ssdpMessage = new ByeByeMessage();
 				
 				((ByeByeMessage)ssdpMessage ).setContentLength(contentLength);

@@ -21,7 +21,7 @@ import com.jerabi.ssdp.message.UpdateMessage;
 import com.jerabi.ssdp.sender.SSDPDefaultPeriodicMessageSender;
 import com.jerabi.ssdp.sender.SSDPDiscoverSender;
 import com.jerabi.ssdp.sender.SSDPPeriodicMessageSender;
-import com.jerabi.ssdp.util.SSDPContants;
+import com.jerabi.ssdp.util.SSDPConstants;
 
 /**
  * This is the Main class.  Provides an implementation of SSDP (Simple Service Discovery Protocol).
@@ -84,7 +84,7 @@ import com.jerabi.ssdp.util.SSDPContants;
  * controler.getDiscoverSender().setSSDPHandler(new SSDPDiscoverResponseHandler(controler));
  *
  * // send notification messages
- * controler.setPeriodicMessageSender(new SSDPPeriodicMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT) {
+ * controler.setPeriodicMessageSender(new SSDPPeriodicMessageSender(controler, SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT) {
  *     &#64;Override
  *     public List&lt;ISSDPMessage> getSSDPMessagesToSend() {
  *         List&lt;ISSDPMessage> list = new ArrayList&lt;ISSDPMessage>();
@@ -107,8 +107,8 @@ import com.jerabi.ssdp.util.SSDPContants;
  * controler.getPeriodicMessageSender().setDelay(30000);
  *
  * // add device and service to be advertised
- * controler.getServiceInfoList().add(new ServiceInfo(SSDPContants.DEFAULT_IP, 
- *                                                    SSDPContants.DEFAULT_PORT, 
+ * controler.getServiceInfoList().add(new ServiceInfo(SSDPConstants.DEFAULT_IP, 
+ *                                                    SSDPConstants.DEFAULT_PORT, 
  *                                                    "upnp:rootdevice", 
  *                                                    "http://127.0.0.1:9000/config", 
  *                                                    new USNInfo("9dcf6222-fc4b-33eb-bf49-e54643b4f416", "upnp:rootdevice")));
@@ -165,7 +165,7 @@ public class SSDPControler implements ISSDPControler {
 	 * @throws Exception 
 	 */
 	public SSDPControler() throws Exception {
-		this(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT);
+		this(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT);
 	}
 	
 	/**
@@ -174,7 +174,7 @@ public class SSDPControler implements ISSDPControler {
 	 * @throws Exception 
 	 */
 	public SSDPControler(List<NetworkInterface> networkInterfaceList) throws Exception {
-		this(SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, networkInterfaceList);
+		this(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT, networkInterfaceList);
 	}
 
 	/**
@@ -400,15 +400,15 @@ public class SSDPControler implements ISSDPControler {
 		} else if (message instanceof AbstractSSDPNotifyMessage) {
 
 			AbstractSSDPNotifyMessage notifyMessage = (AbstractSSDPNotifyMessage) message;
-			if (SSDPContants.NTS_ALIVE.equals(notifyMessage.getNts())) {
+			if (SSDPConstants.NTS_ALIVE.equals(notifyMessage.getNts())) {
 				for (ISSDPMessageHandler listener : messageHandlerList) {
 					listener.processSSDPAliveMessage((AliveMessage) notifyMessage);
 				}
-			} else if (SSDPContants.NTS_UPDATE.equals(notifyMessage.getNts())) {
+			} else if (SSDPConstants.NTS_UPDATE.equals(notifyMessage.getNts())) {
 				for (ISSDPMessageHandler listener : messageHandlerList) {
 					listener.processSSDPUpdateMessage((UpdateMessage) notifyMessage);
 				}
-			} else if (SSDPContants.NTS_BYEBYE.equals(notifyMessage.getNts())) {
+			} else if (SSDPConstants.NTS_BYEBYE.equals(notifyMessage.getNts())) {
 				for (ISSDPMessageHandler listener : messageHandlerList) {
 					listener.processSSDPByeByeMessage((ByeByeMessage) notifyMessage);
 				}
