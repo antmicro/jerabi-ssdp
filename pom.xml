@@ -9,10 +9,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<description>ssdp project</description>
 	<url>http://kenai.com/projects/dlna-mediasuite</url>
-	<issueManagement>
-		<system>jira</system>
-		<url>http://kenai.com/jira/browse/DLNA_MEDIASUITE</url>
-	</issueManagement>
 	<developers>
 		<developer>
 			<id>survivant</id>
@@ -23,32 +19,27 @@
 			<organizationUrl>http://sebastiendionne.ca</organizationUrl>
 		</developer>
 	</developers>
-	<scm>
-		<connection>scm:hg:ssh://survivant00@hg.kenai.com/dlna-mediasuite~dnla-mediasuite</connection>
-		<developerConnection>scm:hg:ssh://survivant00@hg.kenai.com/dlna-mediasuite~dnla-mediasuite</developerConnection>
-		<url>https://hg.kenai.com/hg/dlna-mediasuite~dnla-mediasuite</url>
-	</scm>
 	<build>
 		<defaultGoal>install</defaultGoal>
 		<plugins>
 			<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.6.1</version>
-					<configuration>
-								<links>
-									<link>http://java.sun.com/javase/6/docs/api/</link>
-								</links>
-								<detectOfflineLinks/>  
-								<tags>
-			            <tag>
-			              <name>example.</name>
-			              <placement>aoptcmf</placement>
-			              <head>Example :</head>
-			            </tag>
-			          </tags>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.6.1</version>
+				<configuration>
+					<links>
+						<link>http://java.sun.com/javase/6/docs/api/</link>
+					</links>
+					<detectOfflineLinks/>  
+					<tags>
+						<tag>
+							<name>example.</name>
+							<placement>aoptcmf</placement>
+							<head>Example :</head>
+						</tag>
+					</tags>
 
-						</configuration>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -59,14 +50,12 @@
 			<version>4.11</version>
 		</dependency>
 	</dependencies>
-	<!-- Theses reports will be seen on the report page -->
 	<reporting>
-	<plugins>
+		<plugins>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-      </plugin>
-
+        			<groupId>org.apache.maven.plugins</groupId>
+        			<artifactId>maven-surefire-report-plugin</artifactId>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
@@ -86,39 +75,37 @@
 					<reportSet>
 						<id>non-aggregate</id>
 						<configuration>
-								<links>
-									<link>http://java.sun.com/javase/6/docs/api/</link>
-								</links>
-								<detectOfflineLinks/>  
-								<tags>
-			            <tag>
-			              <name>example.</name>
-			              <placement>aoptcmf</placement>
-			              <head>Example :</head>
-			            </tag>
-			          </tags>
-								<doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
-			          <docletArtifact>
-			            <groupId>gr.spinellis</groupId>
-			            <artifactId>UmlGraph</artifactId>
-			            <version>4.6</version>
-			          </docletArtifact>
-			          <additionalparam>-operations</additionalparam>
-                <additionalparam>-qualify</additionalparam>
-                <additionalparam>-types</additionalparam>
-                <additionalparam>-visibility</additionalparam>
-                <additionalparam>-collpackages</additionalparam>
-                <additionalparam>
-                    -inferrel -inferdep -quiet -hide java.*
-                    -collpackages java.util.* -qualify
-                    -postfixpackage -nodefontsize 9
-                    -nodefontpackagesize 7
-                  </additionalparam>
-
-                
-                <show>package</show>
-                <code>javadoc:aggregate</code>
-                <code>javadoc:test-aggregate</code>
+							<links>
+								<link>http://java.sun.com/javase/6/docs/api/</link>
+							</links>
+							<detectOfflineLinks/>  
+							<tags>
+								<tag>
+									<name>example.</name>
+									<placement>aoptcmf</placement>
+									<head>Example :</head>
+								</tag>
+							</tags>
+							<doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+							<docletArtifact>
+								<groupId>gr.spinellis</groupId>
+								<artifactId>UmlGraph</artifactId>
+								<version>4.6</version>
+							</docletArtifact>
+							<additionalparam>-operations</additionalparam>
+							<additionalparam>-qualify</additionalparam>
+							<additionalparam>-types</additionalparam>
+							<additionalparam>-visibility</additionalparam>
+							<additionalparam>-collpackages</additionalparam>
+							<additionalparam>
+								-inferrel -inferdep -quiet -hide java.*
+								-collpackages java.util.* -qualify
+								-postfixpackage -nodefontsize 9
+								-nodefontpackagesize 7
+							</additionalparam>
+							<show>package</show>
+							<code>javadoc:aggregate</code>
+							<code>javadoc:test-aggregate</code>
 						</configuration>
 						<reports>
 							<report>javadoc</report>
@@ -127,39 +114,38 @@
 					<reportSet>
 						<id>aggregate</id>
 						<configuration>
-								<links>
-									<link>http://java.sun.com/javase/6/docs/api/</link>
-								</links>
-								<detectOfflineLinks/>  
-								<tags>
-			            <tag>
-			              <name>example.</name>
-			              <placement>aoptcmf</placement>
-			              <head>Example :</head>
-			            </tag>
-			          </tags>
-								<doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
-			          <docletArtifact>
-			            <groupId>gr.spinellis</groupId>
-			            <artifactId>UmlGraph</artifactId>
-			            <version>4.6</version>
-			          </docletArtifact>
-			          <additionalparam>-operations</additionalparam>
-                <additionalparam>-qualify</additionalparam>
-                <additionalparam>-types</additionalparam>
-                <additionalparam>-visibility</additionalparam>
-                <additionalparam>-collpackages</additionalparam>
-                <additionalparam>
-                    -inferrel -inferdep -quiet -hide java.*
-                    -collpackages java.util.* -qualify
-                    -postfixpackage -nodefontsize 9
-                    -nodefontpackagesize 7
-                  </additionalparam>
-
+							<links>
+								<link>http://java.sun.com/javase/6/docs/api/</link>
+							</links>
+							<detectOfflineLinks/>  
+							<tags>
+								<tag>
+									<name>example.</name>
+									<placement>aoptcmf</placement>
+									<head>Example :</head>
+								</tag>
+							</tags>
+							<doclet>gr.spinellis.umlgraph.doclet.UmlGraphDoc</doclet>
+							<docletArtifact>
+								<groupId>gr.spinellis</groupId>
+								<artifactId>UmlGraph</artifactId>
+								<version>4.6</version>
+							</docletArtifact>
+							<additionalparam>-operations</additionalparam>
+							<additionalparam>-qualify</additionalparam>
+							<additionalparam>-types</additionalparam>
+							<additionalparam>-visibility</additionalparam>
+							<additionalparam>-collpackages</additionalparam>
+							<additionalparam>
+								-inferrel -inferdep -quiet -hide java.*
+								-collpackages java.util.* -qualify
+								-postfixpackage -nodefontsize 9
+								-nodefontpackagesize 7
+							</additionalparam>
                 
-                <show>package</show>
-                <code>javadoc:aggregate</code>
-                <code>javadoc:test-aggregate</code>
+							<show>package</show>
+							<code>javadoc:aggregate</code>
+							<code>javadoc:test-aggregate</code>
 						</configuration>
 						<reports>
 							<report>aggregate</report>
@@ -168,25 +154,22 @@
 				</reportSets>
 			</plugin>
 			<plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <configuration>
-          <aggregate>true</aggregate>
-        </configuration>
-      </plugin> 
-      <plugin>
-						<groupId>com.atlassian.maven.plugins</groupId>
-						<artifactId>maven-clover2-plugin</artifactId>
-						<version>2.6.3</version>
-						<configuration>
-							<jdk>1.6</jdk>
-							<generatePdf>true</generatePdf>
-							<generateXml>true</generateXml>
-							<generateHtml>true</generateHtml>
-							<excludes>
-				       <exclude>ca/sebastiendionne/ssdp/demo/*.java</exclude>
-				      </excludes>
-						</configuration>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin> 
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<version>2.6.3</version>
+				<configuration>
+					<jdk>1.6</jdk>
+					<generatePdf>true</generatePdf>
+					<generateXml>true</generateXml>
+					<generateHtml>true</generateHtml>
+				</configuration>
 			</plugin>
 		
 			<plugin>
@@ -194,10 +177,10 @@
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.1</version>
 				<configuration>
-          <xmlOutput>true</xmlOutput>
-          <findbugsXmlOutput>true</findbugsXmlOutput>
+					<xmlOutput>true</xmlOutput>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
 					<effort>Max</effort>
-        </configuration>
+        			</configuration>
 			</plugin>
 			
 		</plugins>
@@ -233,9 +216,6 @@
 							<generatePdf>true</generatePdf>
 							<generateXml>true</generateXml>
 							<generateHtml>true</generateHtml>
-							<excludes>
-				      	<exclude>ca/sebastiendionne/ssdp/demo/*.java</exclude>
-				      </excludes>
 						</configuration>
 						<executions>
 							<execution>

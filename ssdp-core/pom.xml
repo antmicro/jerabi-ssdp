@@ -28,11 +28,6 @@
 				<version>2.4</version>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>**/ca/sebastiendionne/ssdp/network/impl/SSDPNetwork.class</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
