@@ -66,7 +66,7 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 	protected StateHolder<State> stateHolder = new StateHolder<State>();
 	
 	protected int delay = SSDPConstants.DEFAULT_DELAY;
-	protected String host = null;;
+	protected String host = null;
 	protected int port;
 	protected ISSDPControler controler = null;
 	protected InetSocketAddress socketAddress = null;
