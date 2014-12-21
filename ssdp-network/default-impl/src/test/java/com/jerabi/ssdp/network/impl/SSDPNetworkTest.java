@@ -15,7 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.Ignore;
 
-import com.jerabi.ssdp.ISSDPControler;
+import com.jerabi.ssdp.ISSDPcontroller;
 import com.jerabi.ssdp.handler.ISSDPResponseHandler;
 import com.jerabi.ssdp.handler.SSDPDefaultResponseHandler;
 import com.jerabi.ssdp.network.IMulticastListener;
@@ -59,7 +59,7 @@ public class SSDPNetworkTest {
 			instance.sendMulticastMessage(message, new InetSocketAddress(SSDPConstants.DEFAULT_IP, SSDPConstants.DEFAULT_PORT), new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 					
 				}
 				
@@ -75,7 +75,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			}, 3);
@@ -102,7 +102,7 @@ public class SSDPNetworkTest {
 			instance.sendMulticastMessage(message, InetAddress.getByName(SSDPConstants.DEFAULT_IP), SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 					
 				}
 				
@@ -118,7 +118,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			}, 3);
@@ -187,7 +187,7 @@ public class SSDPNetworkTest {
 			final IMulticastListener listener1 = instance.createMulticastListener(SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 				}
 				
 				@Override
@@ -205,7 +205,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			});
@@ -214,7 +214,7 @@ public class SSDPNetworkTest {
 			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPConstants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 				}
 				
 				@Override
@@ -231,7 +231,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			});
@@ -325,7 +325,7 @@ public class SSDPNetworkTest {
 			final IMulticastListener listener1 = instance.createMulticastListener(SSDPConstants.DEFAULT_PORT, new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 				}
 				
 				@Override
@@ -343,7 +343,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			});
@@ -352,7 +352,7 @@ public class SSDPNetworkTest {
 			final IMulticastListener listener2 = instance.createMulticastListener(new InetSocketAddress(SSDPConstants.DEFAULT_PORT+1), new ISSDPResponseHandler() {
 				
 				@Override
-				public void setSSDPControler(ISSDPControler controler) {
+				public void setSSDPcontroller(ISSDPcontroller controller) {
 				}
 				
 				@Override
@@ -369,7 +369,7 @@ public class SSDPNetworkTest {
 				}
 				
 				@Override
-				public ISSDPControler getSSDPControler() {
+				public ISSDPcontroller getSSDPcontroller() {
 					return null;
 				}
 			});

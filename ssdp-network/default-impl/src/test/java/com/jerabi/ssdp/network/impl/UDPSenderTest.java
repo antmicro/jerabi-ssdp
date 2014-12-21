@@ -16,7 +16,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 
-import com.jerabi.ssdp.ISSDPControler;
+import com.jerabi.ssdp.ISSDPcontroller;
 import com.jerabi.ssdp.handler.ISSDPResponseHandler;
 import com.jerabi.ssdp.handler.SSDPDefaultResponseHandler;
 import com.jerabi.ssdp.network.impl.MulticastListener;
