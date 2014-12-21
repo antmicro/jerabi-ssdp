@@ -38,9 +38,9 @@ import com.jerabi.ssdp.util.StateHolder;
  *  // a simple example that will send 5 times the same message each time.
  * ...
  * sender = new SSDPDefaultPeriodicMessageSender(controler, SSDPContants.DEFAULT_IP, SSDPContants.DEFAULT_PORT, SSDPContants.DEFAULT_DELAY) {
- * 			&#64;Override
- * 			public List&lt;ISSDPMessage> getSSDPMessagesToSend() {
- * 				List&lt;ISSDPMessage> list = new ArrayList&lt;ISSDPMessage>();
+ * 			@Override
+ * 			public List<ISSDPMessage> getSSDPMessagesToSend() {
+ * 				List<ISSDPMessage> list = new ArrayList<ISSDPMessage>();
  * 				
  * 				// add 5 times the same message to the list
  * 				for(int i=0;i<5;i++){
@@ -236,7 +236,7 @@ public abstract class SSDPPeriodicMessageSender implements Runnable {
 		}
 		
 		// TODO devrait avoir une boucle pour lire les messages
-		// entrant.. testcase : 3 serveurs qui ?couteraient et r?pondrait en meme temps
+		// entrant.. testcase : 3 serveurs qui ecouteraient et repondrait en meme temps
 		// mettre un runnable car on se fou du resultat ici
 		
 		final String msg = message;
