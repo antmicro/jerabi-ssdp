@@ -106,7 +106,7 @@ public class SSDPPeriodicMessageSenderTest {
 			sender.sendMessage("message1");
 			sender.sendMessage((String)null);
 		} catch (Exception e) {
-			fail("Shouldn't throws Exception");
+			fail("Shouldn't throw Exception");
 		}
 	}
 	

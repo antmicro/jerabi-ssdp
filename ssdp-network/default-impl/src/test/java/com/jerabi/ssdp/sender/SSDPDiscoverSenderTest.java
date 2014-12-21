@@ -54,7 +54,7 @@ public class SSDPDiscoverSenderTest {
 			discoverSender.sendMessage("DiscoverMessage");
 			
 		} catch (Exception e) {
-			fail("Shouldn't throws Exception");
+			fail("Shouldn't throw Exception");
 		}
 		
 	} 
@@ -112,7 +112,7 @@ public class SSDPDiscoverSenderTest {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			fail("Shouldn't throws Exception");
+			fail("Shouldn't throw Exception");
 		}
 		
 	}
@@ -162,7 +162,7 @@ public class SSDPDiscoverSenderTest {
 			discoverSender.sendMessage("testSetSSDPHandler");
 				
 		} catch (Exception e) {
-			fail("Shouldn't throws Exception");
+			fail("Shouldn't throw Exception");
 		}
 		
 		try {
