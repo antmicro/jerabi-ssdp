@@ -52,55 +52,6 @@ public class SSDPPeriodicMessageSenderTest {
 	}
 
 	@Test
-	public void testGetState() {
-		assertNotNull(sender.getState());
-
-	}
-
-	@Test
-	public void testSetState() {
-		sender.setState(State.SUSPENDED);
-		assertEquals(State.SUSPENDED, sender.getState());
-
-		sender.setState(State.STOPPED);
-		assertEquals(State.STOPPED, sender.getState());
-	}
-
-	@Test
-	public void testGetDelay() {
-		assertTrue(sender.getDelay() > -1);
-	}
-
-	@Test
-	public void testSetDelay() {
-		sender.setDelay(1234);
-
-		assertEquals(1234, sender.getDelay());
-	}
-
-	@Test
-	public void testGetSSDPHost() {
-		assertEquals(SSDPConstants.DEFAULT_IP, sender.getSSDPHost());
-	}
-
-	@Test
-	public void testSetSSDPHost() {
-		sender.setSSDPHost("localhost");
-		assertEquals("localhost", sender.getSSDPHost());
-	}
-
-	@Test
-	public void testGetSSDPPort() {
-		assertEquals(SSDPConstants.DEFAULT_PORT, sender.getSSDPPort());
-	}
-
-	@Test
-	public void testSetSSDPPort() {
-		sender.setSSDPPort(1234);
-		assertEquals(1234, sender.getSSDPPort());
-	}
-
-	@Test
 	public void testSendMessage() {
 		try {
 			sender.sendMessage("message1");
