@@ -328,11 +328,9 @@ public class SSDPMulticastListenerTest {
 		assertEquals(State.STOPPED, listener2.getState());
 		
 	}
-	
-	@Test
+
+	@Ignore("Not yet implemented") @Test
 	public void testSSDPMulticastListenerNetworkInterface() throws IOException {
-		
-		fail("Not yet implemented");
 		
 		List<SSDPMulticastListener> list = new ArrayList<SSDPMulticastListener>();
 		

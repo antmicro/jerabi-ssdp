@@ -13,6 +13,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.jerabi.ssdp.ISSDPControler;
 import com.jerabi.ssdp.handler.ISSDPResponseHandler;
@@ -45,7 +46,7 @@ public class SSDPNetworkTest {
 		assertNotNull(instance);
 	}
 
-	@Test
+	@Ignore("Not yet implemented") @Test
 	public void testSendMulticastMessageSocketAddress() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		ISSDPNetwork instance = SSDPNetworkFactory.getInstance();
 		assertNotNull(instance);
@@ -88,7 +89,7 @@ public class SSDPNetworkTest {
 	}
 	
 
-	@Test
+	@Ignore("Not yet implemented") @Test
 	public void testSendMulticastMessageInetAddress() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		ISSDPNetwork instance = SSDPNetworkFactory.getInstance();
 		assertNotNull(instance);
@@ -301,11 +302,9 @@ public class SSDPNetworkTest {
 		
 	}
 	
-	@Test
+	@Ignore("Not yet implemented") @Test
 	public void testMulticastListenerNetworkInterface() throws InstantiationException, IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
 		ISSDPNetwork instance = SSDPNetworkFactory.getInstance();
-		
-		fail("Not yet implemented");
 		
 		assertNotNull(instance);
 		
