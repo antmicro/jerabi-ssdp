@@ -190,7 +190,7 @@ public class SSDPMessageHelper {
 				((ByeByeMessage)ssdpMessage ).setContentLength(contentLength);
 
 			} else {
-				logger.info("SSDPNotifyMessage not reconized : \n" + message);
+				logger.info("SSDPNotifyMessage not recognized : \n" + message);
 				return null;
 			}
 			// commons fields

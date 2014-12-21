@@ -413,14 +413,14 @@ public class SSDPControler implements ISSDPControler {
 					listener.processSSDPByeByeMessage((ByeByeMessage) notifyMessage);
 				}
 			} else {
-				logger.info("SSDPNotifyResponse not reconized : " + notifyMessage);
+				logger.info("SSDPNotifyResponse not recognized : " + notifyMessage);
 			}
 		} else if (message instanceof DiscoverResponseMessage) {
 			for (ISSDPMessageHandler listener : messageHandlerList) {
 				listener.processSSDPDiscoverResponseMessage((DiscoverResponseMessage) message);
 			}
 		} else {
-			logger.info("ISSDPMessage not reconized : " + message);
+			logger.info("ISSDPMessage not recognized : " + message);
 		}
 
 	}
